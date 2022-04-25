@@ -16,7 +16,7 @@ public class Tab
         foreach(JToken obj in ((JArray)source.GetValue(1)).Values())
         {
             TabPlayer player = ((JProperty)obj).Value.ToObject<TabPlayer>();
-            player.Name = ((JProperty)obj).Name;
+            player.UserName = ((JProperty)obj).Name;
             Players.Add(player);
         }
     }
