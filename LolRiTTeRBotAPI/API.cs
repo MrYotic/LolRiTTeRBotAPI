@@ -17,7 +17,7 @@ public class API
         request.Host = "api.2b2t.dev";
         return new StreamReader(((HttpWebResponse)request.GetResponse()).GetResponseStream()).ReadToEnd();
     }
-    public PrioQueue GetPrioQueue() => new PrioQueue(GetResponse("https://api.2b2t.dev/prioq"));
+    public Queue GetQueue() => new Queue(GetResponse("https://api.2b2t.dev/prioq") + ";" + GetResponse("https://2b2t.io/api/queue?last=true"));
     public Seen GetSeen(string username) => new Seen(username, GetResponse("https://api.2b2t.dev/seen?username=" + username));
     public Tab GetTab() => new Tab(GetResponse("https://api.2b2t.dev/status"));
     public Stats GetStats(string username)
