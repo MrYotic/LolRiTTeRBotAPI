@@ -1,5 +1,4 @@
 ﻿namespace LolRiTTeRBotAPI.DataTypes;
-using Newtonsoft.Json;
 public class Seen
 {
     public Seen(string name, string json)

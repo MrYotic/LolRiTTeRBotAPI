@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace LolRiTTeRBotAPI.DataTypes;
+﻿namespace LolRiTTeRBotAPI.DataTypes;
 public class Stats
 {
     public int Id { get; set; }
@@ -11,4 +9,5 @@ public class Stats
     public int Joins { get; set; }
     public int Leaves { get; set; }
     public int AdminLevel { get; set; }
+    public bool IsExists { get; set; } = true;
 }

@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Linq;
-
 namespace LolRiTTeRBotAPI.DataTypes;
 public class Tab
 {
