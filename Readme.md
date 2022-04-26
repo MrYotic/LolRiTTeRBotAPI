@@ -36,11 +36,11 @@ Examples:
   ```
   LastKill kill = api.GetLastKill("username");
   ```
- 8. To get one statistic about all accounts by nickname
+ 8. To get one statistic about all accounts by nickname.
   ```
   Stats stats = api.GetStackStats("username");
   ```
- 9. To get statistics all accounts by nickname
+ 9. To get statistics all accounts by nickname.
   ```
   Stats[] stats = api.GetStatsAllAccount("username");
   ```
