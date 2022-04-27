@@ -8,7 +8,7 @@ public class Queue
         Ticks = ulong.Parse(pqArgs[0]);
         PrioQueueLength = int.Parse(pqArgs[1]);
 
-        string[] qArgs = json.Split(";")[0].Split(',');
+        string[] qArgs = json.Split(";")[1].Split(',');
         QueueLength = int.Parse(qArgs[1]);
     }
     public ulong Ticks { get; set; }

@@ -8,13 +8,14 @@ public class API
     private readonly CookieContainer cookieContainer = new();    
     private string GetResponse(string url)
     {
+        string site = url.Split('/')[2];
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
         request.CookieContainer = cookieContainer;
         request.Accept = @"text/html, application/xhtml+xml, */*";
-        request.Referer = "api.2b2t.dev";
+        request.Referer = site;
         request.Headers.Add("Accept-Language", "en-GB");
         request.UserAgent = @"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)";
-        request.Host = "api.2b2t.dev";
+        request.Host = site;
         return new StreamReader(((HttpWebResponse)request.GetResponse()).GetResponseStream()).ReadToEnd();
     }
     public Queue GetQueue() => new Queue(GetResponse("https://api.2b2t.dev/prioq") + ";" + GetResponse("https://2b2t.io/api/queue?last=true"));
@@ -43,9 +44,9 @@ public class API
             Deaths = x.Deaths + z.Deaths,
             Id = x.Id,
             IsExists = x.IsExists || z.IsExists,
-            Joins = z.Joins + x.Joins,
-            Kills = z.Kills + z.Kills,
-            Leaves = z.Leaves + z.Leaves,
+            Joins = x.Joins + z.Joins,
+            Kills = x.Kills + z.Kills,
+            Leaves = x.Leaves + z.Leaves,
             UserName = x.UserName,
             Uuid = z.Uuid != null ? z.Uuid : x.Uuid,
         });
