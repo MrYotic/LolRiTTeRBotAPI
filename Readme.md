@@ -44,4 +44,9 @@ Examples:
   ```
   Stats[] stats = api.GetStatsAllAccount("username");
   ```
- 
+ 10. Get Queue Length
+  ```
+  Queue queue = api.GetQueue();
+  int queueLength = queue.QueueLength;
+  int prioqueueLength = queue.PrioQueueLength;
+  ```
